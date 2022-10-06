@@ -20,6 +20,7 @@ export function Home() {
   }
 
   useEffect(() => {
+    // put your IP http://YOUR-IP:3333/games
     fetch('http://192.168.0.19:3333/games')
       .then(res => res.json())
       .then(data => setData(data))

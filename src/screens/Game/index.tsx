@@ -19,9 +19,11 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { GameParams } from '../../@types/navigation'
 import { Heading } from '../../components/Heading'
 import { DuoCard, DuoCardProps } from '../../components/DuoCard'
+import { DuoMatch } from '../../components/DuoMatch'
 
 export function Game() {
   const [duos, setDuos] = useState<DuoCardProps[]>([])
+  const [discordDuoSelected, setDiscordDuoSelected] = useState('')
 
   const route = useRoute()
   const navigation = useNavigation()
@@ -29,6 +31,13 @@ export function Game() {
 
   function handleBack() {
     navigation.goBack()
+  }
+
+  async function getDiscordUser(adsId: string) {
+    // put your IP http://YOUR-IP:3333/games
+    fetch(`http://192.168.0.19:3333/ads/${adsId}/discord`)
+      .then(res => res.json())
+      .then(data => setDiscordDuoSelected(data.discord))
   }
 
   useEffect(() => {
@@ -62,7 +71,7 @@ export function Game() {
             data={duos}
             keyExtractor={item => item.id}
             renderItem={({ item }) => (
-              <DuoCard onConnect={() => {}} data={item} />
+              <DuoCard onConnect={() => getDiscordUser(item.id)} data={item} />
             )}
             horizontal
             showsHorizontalScrollIndicator={false}
@@ -75,6 +84,11 @@ export function Game() {
                 Não há anúncios publicados ainda.
               </Text>
             )}
+          />
+          <DuoMatch
+            onClose={() => setDiscordDuoSelected('')}
+            visible={discordDuoSelected.length > 0}
+            discord={discordDuoSelected}
           />
         </ScrollView>
       </SafeAreaView>
