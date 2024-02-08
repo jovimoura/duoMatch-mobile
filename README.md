@@ -18,45 +18,32 @@
 
 <br />
 
-## Installation
+## Features
 
-### Clone
+- 🛠️ Complete Food Commerce Built
+- 💳 Free & Pro Plan Using Stripe
+- 🎨 Clean, Modern UI Using Nativewind
+- 🚀 Optimistic UI Updates for a Great UX
+- 🔤 100% written in TypeScript
+- 🎁 ...much more
 
-```
-git clone https://github.com/jovimoura/duoMatch-mobile
-```
+# How can U test: 
 
-### Access the folder
+## 1. Install dependencies
 
-```
-cd <name-folder>
-```
-
-### Install dependencies
-
-```
+```bash
 npm i
 ```
 
-### Start the app
+## 2. Run the app
 
-```
-npm run start || expo start
-```
-
-### Port:
-
-```
-exp://192.168.0.12:19000
+```bash
+npx expo start
 ```
 
 <br />
 
-## Image of project
-
-<br />
-
-<img style="width: auto; height: auto " src="./src/assets/readme/DuoMatch.gif">
+<img style="width: 250px; height: 500px " src="./src/assets/readme/DuoMatch.gif">
 
 ## Tecnologies and Libs:
 
@@ -67,12 +54,9 @@ exp://192.168.0.12:19000
     <li>Phosphoricons</li>
 </ul>
 
-<br />
 
-## Made by:
+## License
 
-### João Victor dos Santos Moura
+[MIT](https://choosealicense.com/licenses/mit/)
 
-### E-mail: joaovictors.mouraa@gmail.com
-
-### Linkedin: https://www.linkedin.com/in/jovimoura10/
+[John Moura](https://jovimoura.vercel.app/)
